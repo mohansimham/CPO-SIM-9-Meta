@@ -194,6 +194,13 @@ body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text);li
 .learn-card .learn-example{background:var(--light);border-radius:10px;padding:16px;margin-top:14px;}
 .learn-card .learn-example h4{font-size:.82em;font-weight:700;color:var(--navy);margin-bottom:6px;}
 .learn-card .learn-example p{font-size:.85em;color:var(--muted);margin-bottom:0;font-style:italic;}
+.learn-card .learn-framework{background:#1a1a2e;border-radius:10px;padding:18px 20px;margin-top:14px;border-left:3px solid var(--accent);}
+.learn-card .learn-framework h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.learn-card .learn-framework ol{list-style:none;padding:0;margin:0;counter-reset:fw;}
+.learn-card .learn-framework ol li{counter-increment:fw;font-size:.84em;color:rgba(255,255,255,.75);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.5;}
+.learn-card .learn-framework ol li:last-child{border-bottom:none;}
+.learn-card .learn-framework ol li::before{content:counter(fw) ". ";color:var(--accent);font-weight:700;}
+.learn-card .learn-framework ol li span{color:rgba(255,255,255,.4);font-size:.9em;}
 .learn-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
 .learn-dots{display:flex;gap:8px;}
 .learn-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:background .2s;}
@@ -355,6 +362,20 @@ footer a{color:#556677;text-decoration:none;}
         <h4>Example</h4>
         <p>When Google launched Gmail in 2004, the PRD didn't start with "build an email client." It started with the problem: "Existing webmail forces users to delete emails because of tiny storage limits, which means search is useless." That problem framing led to 1GB of free storage — 500x more than competitors — and made search the core feature, not an afterthought.</p>
       </div>
+      <div class="learn-framework">
+        <h4>PRD Template</h4>
+        <ol>
+          <li>Problem Statement <span>— What user pain are we solving? Evidence?</span></li>
+          <li>Target User <span>— Who specifically? What segment? What job-to-be-done?</span></li>
+          <li>Goals & Success Metrics <span>— How will we measure success? KPIs with targets.</span></li>
+          <li>Non-Goals <span>— What are we explicitly NOT doing? Scope boundaries.</span></li>
+          <li>Proposed Solution <span>— What are we building? User flows, key interactions.</span></li>
+          <li>Acceptance Criteria <span>— Testable conditions. "The feature is done when..."</span></li>
+          <li>Dependencies & Risks <span>— What could block us? What could go wrong?</span></li>
+          <li>Timeline & Milestones <span>— Phases, target dates, review checkpoints.</span></li>
+          <li>Open Questions <span>— Unresolved decisions that need input from stakeholders.</span></li>
+        </ol>
+      </div>
       <div class="learn-nav">
         <span class="learn-counter">1 of 4</span>
         <div class="learn-dots"><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
@@ -374,6 +395,21 @@ footer a{color:#556677;text-decoration:none;}
       <div class="learn-example">
         <h4>Example</h4>
         <p>Google's Chrome team wrote a design doc proposing a multi-process browser architecture — each tab running in its own process. The doc laid out the performance trade-off (more memory usage) against the stability benefit (one tab crash doesn't kill the browser). This design doc shaped the entire modern browser landscape.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Design Doc Template</h4>
+        <ol>
+          <li>Context & Background <span>— Why are we writing this? Link to PRD.</span></li>
+          <li>Goals & Non-Goals <span>— What this doc covers and what it doesn't.</span></li>
+          <li>Proposed Design <span>— Architecture diagrams, data flows, key components.</span></li>
+          <li>Alternatives Considered <span>— Other approaches and why they were rejected.</span></li>
+          <li>Trade-offs <span>— What we gain vs. what we sacrifice with this approach.</span></li>
+          <li>System Dependencies <span>— What existing systems are affected?</span></li>
+          <li>Security & Privacy <span>— Data handling, access controls, compliance.</span></li>
+          <li>Testing Strategy <span>— How we validate correctness and performance.</span></li>
+          <li>Rollout Plan <span>— Phased deployment, feature flags, rollback triggers.</span></li>
+          <li>What Could Go Wrong <span>— Failure modes, edge cases, mitigation plans.</span></li>
+        </ol>
       </div>
       <div class="learn-nav">
         <span class="learn-counter">2 of 4</span>
@@ -395,6 +431,17 @@ footer a{color:#556677;text-decoration:none;}
         <h4>Example</h4>
         <p>When Google was deciding whether to build Android, Larry Page and Sergey Brin didn't read a 40-page spec. They saw a one-page strategic brief: "Microsoft controls the desktop OS and is coming for mobile. If they own the mobile OS too, they control the search entry point. We need an open mobile platform." That one-pager greenlit a $50 billion business.</p>
       </div>
+      <div class="learn-framework">
+        <h4>Document-Audience Matrix</h4>
+        <ol>
+          <li>Executive One-Pager <span>— Problem, recommendation, impact, resource ask. 1 page max.</span></li>
+          <li>Product Requirements Doc <span>— Full scope for cross-functional teams. 3-6 pages.</span></li>
+          <li>Technical Design Doc <span>— Architecture & trade-offs for engineering. 5-15 pages.</span></li>
+          <li>User Story / Spec <span>— Acceptance criteria for dev sprints. Per-feature.</span></li>
+          <li>Launch Brief <span>— Marketing, sales enablement, support training. External-facing.</span></li>
+          <li>Post-Mortem <span>— What happened, root cause, actions. For learning loops.</span></li>
+        </ol>
+      </div>
       <div class="learn-nav">
         <span class="learn-counter">3 of 4</span>
         <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span></div>
@@ -414,6 +461,19 @@ footer a{color:#556677;text-decoration:none;}
       <div class="learn-example">
         <h4>Example</h4>
         <p>Google Wave launched in 2009 without a clear launch review process for user experience. Despite brilliant technology, the product confused users because nobody had documented what the core use case was or how to explain it. The launch review process was later strengthened specifically because of lessons learned from Wave's failure.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Launch Review Checklist</h4>
+        <ol>
+          <li>Privacy Review <span>— Data collection, storage, consent flows, GDPR/CCPA compliance.</span></li>
+          <li>Security Audit <span>— Threat model, pen testing, auth flows, data encryption.</span></li>
+          <li>Legal Sign-off <span>— ToS, IP review, regulatory compliance per market.</span></li>
+          <li>Infrastructure Readiness <span>— Load testing, scaling plan, SLAs, monitoring.</span></li>
+          <li>UX Validation <span>— Usability testing, accessibility (WCAG), core flow benchmarks.</span></li>
+          <li>Rollback Plan <span>— Feature flags, kill switch, data migration reversal.</span></li>
+          <li>Success Metrics <span>— Dashboards live, alerts configured, review cadence set.</span></li>
+          <li>Support Readiness <span>— FAQs, escalation paths, known issues documented.</span></li>
+        </ol>
       </div>
       <div class="learn-nav">
         <span class="learn-counter">4 of 4</span>
